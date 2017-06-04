@@ -527,7 +527,8 @@ GameObject:
   - 33: {fileID: 2117716844}
   - 65: {fileID: 2117716843}
   - 23: {fileID: 2117716842}
-  m_Layer: 0
+  - 114: {fileID: 2117716846}
+  m_Layer: 8
   m_Name: HitBox
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -591,3 +592,16 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 3
+--- !u!114 &2117716846
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2117716841}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 343bc0fbdf7c1f241abe584a35757750, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_MoveSpeed: 0
+  m_AttackDelayTime: 0
