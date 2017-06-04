@@ -126,7 +126,8 @@ GameObject:
   - 23: {fileID: 668285597}
   - 114: {fileID: 668285601}
   - 114: {fileID: 668285602}
-  m_Layer: 0
+  - 114: {fileID: 668285603}
+  m_Layer: 9
   m_Name: TestPlayer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -223,6 +224,19 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 0
   visibleTargets: []
+--- !u!114 &668285603
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 668285596}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c19b6d9ebb06a04459846c9d823bca4c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dagger: {fileID: 113110, guid: 470779af20e56c14bb6ec58819787d0e, type: 2}
+  cooldown: 0
 --- !u!1 &697069715
 GameObject:
   m_ObjectHideFlags: 0
@@ -310,7 +324,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 781220799}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.6, y: 1.6, z: -24.9}
+  m_LocalPosition: {x: -4.38, y: 2.85, z: -27.33}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 640516389}
@@ -381,7 +395,7 @@ GameObject:
   - 33: {fileID: 1849803170}
   - 65: {fileID: 1849803169}
   - 23: {fileID: 1849803168}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
