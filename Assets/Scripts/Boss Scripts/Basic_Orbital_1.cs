@@ -34,10 +34,27 @@ public class Basic_Orbital_1 : MonoBehaviour
 
         if(m_State == OrbitalState.s_Extend)
         {
+            m_Timer += Time.deltaTime;
             m_Dir = new Vector3(transform.position.x - ParentObjPos.x, 0, transform.position.z - ParentObjPos.z).normalized;
-            transform.Translate(m_Dir * Time.deltaTime);
+            transform.Translate(m_Dir * Time.deltaTime * 2, Space.World);
+            if(m_Timer >= 1.5f)
+            {
+                m_State = OrbitalState.s_Retract;
+                m_Timer = 0.0f;
+            }
         }
-        
+        if (m_State == OrbitalState.s_Retract)
+        {
+            m_Timer += Time.deltaTime;
+            m_Dir = new Vector3(ParentObjPos.x - transform.position.x, 0, ParentObjPos.z - transform.position.z).normalized;
+            transform.Translate(m_Dir * Time.deltaTime * 2, Space.World);
+            if (m_Timer >= 1.5f)
+            {
+                m_State = OrbitalState.s_Extend;
+                m_Timer = 0.0f;
+            }
+        }
+
 
     }
 }
