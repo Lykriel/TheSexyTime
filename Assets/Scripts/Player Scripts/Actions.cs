@@ -11,21 +11,25 @@ public class Actions : MonoBehaviour {
 
     public LayerMask targetMask;
     public LayerMask obstacleMask;
+    HitBox m_hitBox;
 
     [HideInInspector]
-    public List<Transform> visibleTargets = new List<Transform>();
+    public List<GameObject> visibleTargets = new List<GameObject>();
 
-    private void Start()
+    private void Update()
     {
-        StartCoroutine("FindTargetsWithDelay", .2f);
-    }
-
-    IEnumerator FindTargetsWithDelay(float delay)
-    {
-        while (true)
+        if (Input.GetKeyDown(KeyCode.Space))
         {
-            yield return new WaitForSeconds(delay);
             FindTargets();
+            for (int i = 0; i < visibleTargets.Count; i++)
+            {
+                if (visibleTargets[i].GetComponent<HitBox>())
+                {
+                    //codes here
+                    Debug.Log("check");
+                    visibleTargets[i].GetComponent<HitBox>().TakeDamage(1);
+                }
+            }
         }
     }
 
@@ -36,11 +40,11 @@ public class Actions : MonoBehaviour {
 
         for (int i = 0; i < targetInRadius.Length; i++)
         {
-            Transform target = targetInRadius[i].transform;
-            Vector3 dirToTarget = (target.position - transform.position).normalized;
+            GameObject target = targetInRadius[i].gameObject;
+            Vector3 dirToTarget = (target.transform.position - transform.position).normalized;
             if (Vector3.Angle (transform.forward,dirToTarget) < viewAngle / 2)
             {
-                float distToTarget = Vector3.Distance(transform.position, target.position);
+                float distToTarget = Vector3.Distance(transform.position, target.transform.position);
                 if (!Physics.Raycast(transform.position, dirToTarget, distToTarget,obstacleMask))
                 {
                     visibleTargets.Add(target);
