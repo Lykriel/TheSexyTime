@@ -68,11 +68,11 @@ public class TheFirstGuardian : MonoBehaviour {
         if (m_Mortality == MORTALITY_STATE.FuckFarOff)
         {
             GetComponent<Renderer>().material.color = new Color(1, 0, 0);
-            m_SpinFactor = 400;
+            m_SpinFactor = 0;
         }
         else
         {
-            m_SpinFactor = 75;
+            m_SpinFactor = 0;
         }
 
         if (m_Mortality == MORTALITY_STATE.SpankMeDaddy)

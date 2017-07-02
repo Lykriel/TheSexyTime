@@ -9,6 +9,7 @@ public class Actions : MonoBehaviour {
     [Range(0,360)]
     public float viewAngle;
     private ParticleSystem Slash;
+    private float cooldown;
 
     public LayerMask targetMask;
     public LayerMask obstacleMask;
@@ -20,22 +21,31 @@ public class Actions : MonoBehaviour {
     private void Start()
     {
         Slash = transform.FindChild("Slash").GetComponent<ParticleSystem>();
+        cooldown = 1.0f;
     }
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (cooldown > 0)
         {
-            FindTargets();
-            Slash.Emit(1);
-            for (int i = 0; i < visibleTargets.Count; i++)
+            cooldown -= Time.deltaTime;
+        }
+        if (Input.GetKey(KeyCode.Space))
+        {
+            if (cooldown <= 0)
             {
-                if (visibleTargets[i].GetComponent<HitBox>())
+                FindTargets();
+                Slash.Emit(1);
+                cooldown = 0.5f;
+                for (int i = 0; i < visibleTargets.Count; i++)
                 {
-                    //codes here
-                    visibleTargets[i].GetComponent<HitBox>().TakeDamage(1);
+                    if (visibleTargets[i].GetComponent<HitBox>())
+                    {
+                        //codes here
+                        visibleTargets[i].GetComponent<HitBox>().TakeDamage(1);
+                    }
                 }
-            }
+            }   
         }
     }
 
