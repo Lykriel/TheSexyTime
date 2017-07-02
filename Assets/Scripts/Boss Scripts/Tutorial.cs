@@ -1,10 +1,9 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class TheFirstGuardian : HitBox
+public class Tutorial : HitBox
 {
-
-    protected enum AI_STATE
+    enum AI_STATE
     {
 
         s_Aiming,
@@ -14,12 +13,7 @@ public class TheFirstGuardian : HitBox
         s_TripleAttack
 
     };
-   
 
-    private int m_Health;
-    int m_AttackCount;
-    int m_SpinFactor;
-    protected AI_STATE m_State;
 
     //state stuff
     float m_StateTimer;
@@ -27,36 +21,24 @@ public class TheFirstGuardian : HitBox
     Vector3 m_TargetLocation;
     bool m_IsRandomed;
     bool m_IsAim;
-
-
+    AI_STATE m_State;
+    int m_AttackCount;
     // Use this for initialization
-    void Start()
+    void Start ()
     {
-        m_Mortality = MORTALITY_STATE.NutsackOfSteel;
         m_State = AI_STATE.s_Patrol;
-        m_Health = 1;
-        m_MoveSpeed = 10;
         m_IsRandomed = false;
         m_IsAim = false;
-        m_SpinFactor = 75;
         m_AttackCount = 0;
-
     }
-
-
-    // Update is called once per frame
-    void Update()
+	
+	// Update is called once per frame
+	void Update ()
     {
-       
         //change color depending on mortality
         if (m_Mortality == MORTALITY_STATE.FuckFarOff)
         {
             GetComponent<Renderer>().material.color = new Color(1, 0, 0);
-            m_SpinFactor = 500;
-        }
-        else
-        {
-            m_SpinFactor = 75;
         }
 
         if (m_Mortality == MORTALITY_STATE.SpankMeDaddy)
@@ -89,7 +71,7 @@ public class TheFirstGuardian : HitBox
                 {
                     Vector3 move = (m_TargetLocation - transform.position).normalized;
                     move.y = 0;
-                    transform.Translate(move * Time.deltaTime * 5, Space.World);
+                    transform.Translate(move * Time.deltaTime * 5);
                     if (Vector3.Distance(m_TargetLocation, transform.position) <= 1.0f)
                     {
                         m_IsAim = false;
@@ -140,7 +122,7 @@ public class TheFirstGuardian : HitBox
             case AI_STATE.s_TripleAttack:
                 Vector3 moveVec = (m_TargetLocation - transform.position).normalized;
                 moveVec.y = 0;
-                transform.Translate(moveVec * Time.deltaTime * 20,Space.World);
+                transform.Translate(moveVec * Time.deltaTime * 20);
                 if (Vector3.Distance(m_TargetLocation, transform.position) <= 1.0f)
                 {
                     if (m_AttackCount < 4)
@@ -157,7 +139,5 @@ public class TheFirstGuardian : HitBox
                 break;
 
         }
-        transform.Rotate(transform.up * Time.deltaTime * m_SpinFactor, Space.World);
     }
-
 }
