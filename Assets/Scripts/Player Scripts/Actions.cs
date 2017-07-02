@@ -8,6 +8,7 @@ public class Actions : MonoBehaviour {
     public float viewRadius;
     [Range(0,360)]
     public float viewAngle;
+    private ParticleSystem Slash;
 
     public LayerMask targetMask;
     public LayerMask obstacleMask;
@@ -16,17 +17,22 @@ public class Actions : MonoBehaviour {
     [HideInInspector]
     public List<GameObject> visibleTargets = new List<GameObject>();
 
+    private void Start()
+    {
+        Slash = transform.FindChild("Slash").GetComponent<ParticleSystem>();
+    }
+
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
             FindTargets();
+            Slash.Emit(1);
             for (int i = 0; i < visibleTargets.Count; i++)
             {
                 if (visibleTargets[i].GetComponent<HitBox>())
                 {
                     //codes here
-                    Debug.Log("check");
                     visibleTargets[i].GetComponent<HitBox>().TakeDamage(1);
                 }
             }
