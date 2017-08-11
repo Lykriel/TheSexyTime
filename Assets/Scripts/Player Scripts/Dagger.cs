@@ -34,7 +34,7 @@ public class Dagger : MonoBehaviour {
         GameObject projectile = Instantiate(dagger);
         projectile.transform.position += transform.position;
         Rigidbody rb = projectile.GetComponent<Rigidbody>();
-        rb.velocity = transform.forward * 100;
+        rb.velocity = transform.forward * 70;
         Physics.IgnoreLayerCollision(9,10);
         Destroy(projectile, 3.0f);
         cooldown = 6.0f;
