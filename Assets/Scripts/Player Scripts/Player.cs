@@ -3,17 +3,21 @@ using System.Collections;
 
 public class Player : Singleton<Player>
 {
-    int m_Health = 1;
+    public GameObject DeathCanvas;
+    public int m_Health = 1;
 
 	// Use this for initialization
 	void Start ()
     {
-	
+        DeathCanvas.SetActive(false);
 	}
 	
 	// Update is called once per frame
 	void Update ()
     {
-	
+        if (m_Health <= 0)
+        {
+            DeathCanvas.SetActive(true);
+        }
 	}
 }
