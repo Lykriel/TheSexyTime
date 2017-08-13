@@ -16,7 +16,6 @@ public class TheFirstGuardian : HitBox
     };
    
 
-    private int m_Health;
     int m_AttackCount;
     int m_SpinFactor;
     protected AI_STATE m_State;

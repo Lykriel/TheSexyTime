@@ -12,12 +12,12 @@ public class HitBox : MonoBehaviour
 
     };
 
-    private int m_Health;
+    
     public int m_MoveSpeed;
     public GameObject player;
-   
-   
-   
+
+
+    protected int m_Health;
     protected MORTALITY_STATE m_Mortality;
 
 
@@ -36,15 +36,15 @@ public class HitBox : MonoBehaviour
     public void TakeDamage(int damage)
     {
         m_Health -= damage;
-        if(m_Health <= 0)
-        {
-            Destroy(gameObject);
-        }
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-       
+        if (m_Health <= 0)
+        {
+            Destroy(gameObject);
+        }
     }
 }
