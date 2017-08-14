@@ -27,7 +27,7 @@ public class TheSecondGuardian : HitBox
 	// Use this for initialization
 	void Start ()
     {
-        m_MoveSpeed = 4;
+        m_MoveSpeed = 7;
         m_rotateSpeed = 20;
         m_MoveDelayTimer = 0.0f;
         m_TimerON = false;
@@ -71,7 +71,7 @@ public class TheSecondGuardian : HitBox
                 Debug.Log("delay");
                 //start Delay timer
                 m_MoveDelayTimer += Time.deltaTime;
-                if(m_MoveDelayTimer >= 0.5f)
+                if(m_MoveDelayTimer >= 0.75f)
                 {
                     m_MoveDelayTimer = 0f;
                     m_state = AI_STATE.s_Move;
