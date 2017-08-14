@@ -28,7 +28,7 @@ public class HitBox : MonoBehaviour
         m_Mortality = MORTALITY_STATE.NutsackOfSteel;
        
         m_Health = 1;
-        m_MoveSpeed = 10;
+        m_MoveSpeed = 0;
        
         
 	}

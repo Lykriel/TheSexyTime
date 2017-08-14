@@ -30,6 +30,10 @@ public class Menu : MonoBehaviour {
     {
         SceneManager.LoadScene("MainMenu");
     }
+    public void LoadTutorial()
+    {
+        SceneManager.LoadScene("Tutorial");
+    }
     public void LoadLevel1()
     {
         SceneManager.LoadScene("Level01");
@@ -37,14 +41,6 @@ public class Menu : MonoBehaviour {
     public void LoadLevel2()
     {
         SceneManager.LoadScene("Level02");
-    }
-    public void LoadLevel3()
-    {
-        SceneManager.LoadScene("Level03");
-    }
-    public void LoadLevel4()
-    {
-        SceneManager.LoadScene("Level04");
     }
     public void Pause()
     {

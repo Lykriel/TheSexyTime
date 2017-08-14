@@ -22,6 +22,7 @@ public class TheSecondGuardian_Sheilds : HitBox
         if (m_Health <= 0)
         {
             m_Parent.WallBreak();
+            gameObject.SetActive(false);
         }
 	}
 
