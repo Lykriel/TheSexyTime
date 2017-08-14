@@ -18,9 +18,14 @@ public class Actions : MonoBehaviour {
     [HideInInspector]
     public List<GameObject> visibleTargets = new List<GameObject>();
 
-    private void Start()
+    private void Awake()
     {
         Slash = transform.FindChild("Slash").GetComponent<ParticleSystem>();
+        Slash.Stop();
+    }
+
+    private void Start()
+    {
         cooldown = 1.0f;
     }
 
