@@ -6,29 +6,32 @@ public class Dagger : MonoBehaviour {
     public GameObject dagger;
     public float cooldown;
 
-	// Update is called once per frame
-	void Update () {
-        if (cooldown > 0)
+    // Update is called once per frame
+    void Update()
+    {
+        if (gameObject.GetComponent<Player>().m_Health > 0)
         {
-            cooldown -= Time.deltaTime;
-        }
-        if (Input.GetKeyDown(KeyCode.E))
-        {
-            if (Check() == null)
+            if (cooldown > 0)
             {
-                if (cooldown <= 0)
+                cooldown -= Time.deltaTime;
+            }
+            if (Input.GetKeyDown(KeyCode.E))
+            {
+                if (Check() == null)
                 {
-                    CreateDagger();
+                    if (cooldown <= 0)
+                    {
+                        CreateDagger();
+                    }
+                }
+                else
+                {
+                    Teleport(Check());
                 }
             }
-            else
-            {
-                Teleport(Check());
-            }
-        }
-           
-	}
 
+        }
+    }
     private void CreateDagger()
     {
         GameObject projectile = Instantiate(dagger);

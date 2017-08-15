@@ -36,11 +36,11 @@ public class Menu : MonoBehaviour {
     }
     public void LoadLevel1()
     {
-        SceneManager.LoadScene("Level01");
+        SceneManager.LoadScene("Level 01");
     }
     public void LoadLevel2()
     {
-        SceneManager.LoadScene("Level02");
+        SceneManager.LoadScene("Level 02");
     }
     public void Pause()
     {

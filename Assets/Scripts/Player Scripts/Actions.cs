@@ -31,29 +31,31 @@ public class Actions : MonoBehaviour {
 
     private void Update()
     {
-        if (cooldown > 0)
+        if (gameObject.GetComponent<Player>().m_Health > 0)
         {
-            cooldown -= Time.deltaTime;
-        }
-        if (Input.GetKey(KeyCode.Space))
-        {
-            if (cooldown <= 0)
+            if (cooldown > 0)
             {
-                FindTargets();
-                Slash.Emit(1);
-                cooldown = 0.5f;
-                for (int i = 0; i < visibleTargets.Count; i++)
+                cooldown -= Time.deltaTime;
+            }
+            if (Input.GetKey(KeyCode.Space))
+            {
+                if (cooldown <= 0)
                 {
-                    if (visibleTargets[i].GetComponent<HitBox>())
+                    FindTargets();
+                    Slash.Emit(1);
+                    cooldown = 0.5f;
+                    for (int i = 0; i < visibleTargets.Count; i++)
                     {
-                        //codes here
-                        visibleTargets[i].GetComponent<HitBox>().TakeDamage(1);
+                        if (visibleTargets[i].GetComponent<HitBox>())
+                        {
+                            //codes here
+                            visibleTargets[i].GetComponent<HitBox>().TakeDamage(1);
+                        }
                     }
                 }
-            }   
+            }
         }
     }
-
     void FindTargets()
     {
         visibleTargets.Clear();
