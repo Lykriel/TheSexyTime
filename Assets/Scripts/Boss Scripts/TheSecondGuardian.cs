@@ -37,7 +37,7 @@ public class TheSecondGuardian : HitBox
         m_Direction = AI_Direction.NONE;
         m_StartRotation = 0f;
         m_WallNum = 6;
-        
+        m_Health = 1;        
 	}
 
     
@@ -66,6 +66,13 @@ public class TheSecondGuardian : HitBox
         if (transform.position.y != 2.5)
         {
             transform.position.Set(transform.position.x, 2.5f, transform.position.z);
+        }
+        if (m_Health <= 0)
+        {
+            m_MoveDelayTimer = 0;
+            m_state = AI_STATE.s_Delay;
+            m_Mortality = MORTALITY_STATE.NutsackOfSteel;
+            WinCanvas.SetActive(true);
         }
         switch (m_state)
         {

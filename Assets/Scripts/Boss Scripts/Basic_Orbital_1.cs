@@ -24,17 +24,15 @@ public class Basic_Orbital_1 : MonoBehaviour
         CenterPiece = GetComponentInParent<TheFirstGuardian>();
         m_State = OrbitalState.s_Extend;
         m_OrgPos = transform.position;
-        m_Timer = 0.0f;
-        thePlayer = GetComponent<GameObject>();
-        
+        m_Timer = 0.0f;        
     }
     void OnCollisionEnter(Collision col)
     {
-        //if(CenterPiece.GetState() == TheFirstGuardian.AI_STATE.s_TripleAttack)
+        if(CenterPiece.GetState() == TheFirstGuardian.AI_STATE.s_TripleAttack)
         if (col.gameObject == thePlayer)
         {
             Player.Instance.GetHit();
-                Debug.Log("hit");
+            Debug.Log(col.gameObject.name);
         }
     }
     // Update is called once per frame

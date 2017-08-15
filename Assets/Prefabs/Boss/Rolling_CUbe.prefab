@@ -31,7 +31,6 @@ GameObject:
   - 65: {fileID: 6595346}
   - 23: {fileID: 2320976}
   - 114: {fileID: 11408314}
-  - 65: {fileID: 6552806}
   - 54: {fileID: 5408752}
   m_Layer: 8
   m_Name: Rolling_CUbe
@@ -202,7 +201,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 129608}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 6, y: 2.5, z: 3}
+  m_LocalPosition: {x: 36.00205, y: 2.5, z: 49}
   m_LocalScale: {x: 5, y: 5, z: 5}
   m_Children:
   - {fileID: 417138}
@@ -507,18 +506,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!65 &6552806
-BoxCollider:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 129608}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!65 &6559096
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -578,9 +565,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f769ff8265903c345a32d73952ac14aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_MoveSpeed: 0
+  WinCanvas: {fileID: 0}
+  m_MoveSpeed: 7
   player: {fileID: 0}
-  m_rotateSpeed: 1
+  m_rotateSpeed: 20
 --- !u!114 &11431930
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -592,6 +580,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b8595b67208888a46b10c6fea78a9bae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  WinCanvas: {fileID: 0}
   m_MoveSpeed: 0
   player: {fileID: 129608}
 --- !u!114 &11447698
@@ -605,6 +594,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b8595b67208888a46b10c6fea78a9bae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  WinCanvas: {fileID: 0}
   m_MoveSpeed: 0
   player: {fileID: 129608}
 --- !u!114 &11467342
@@ -618,6 +608,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b8595b67208888a46b10c6fea78a9bae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  WinCanvas: {fileID: 0}
   m_MoveSpeed: 0
   player: {fileID: 129608}
 --- !u!114 &11477916
@@ -631,6 +622,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b8595b67208888a46b10c6fea78a9bae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  WinCanvas: {fileID: 0}
   m_MoveSpeed: 0
   player: {fileID: 129608}
 --- !u!114 &11495660
@@ -644,6 +636,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b8595b67208888a46b10c6fea78a9bae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  WinCanvas: {fileID: 0}
   m_MoveSpeed: 0
   player: {fileID: 129608}
 --- !u!114 &11498752
@@ -657,6 +650,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b8595b67208888a46b10c6fea78a9bae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  WinCanvas: {fileID: 0}
   m_MoveSpeed: 0
   player: {fileID: 129608}
 --- !u!1001 &100100000

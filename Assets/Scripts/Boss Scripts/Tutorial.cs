@@ -30,6 +30,7 @@ public class Tutorial : HitBox
         m_IsRandomed = false;
         m_IsAim = false;
         m_AttackCount = 0;
+        m_Health = 1;
     }
 	
 	// Update is called once per frame
@@ -51,7 +52,14 @@ public class Tutorial : HitBox
             GetComponent<Renderer>().material.color = new Color(1, 1, 1);
         }
 
+        if (m_Health <= 0)
+        {
+            Debug.Log(m_Health);
+            m_Mortality = MORTALITY_STATE.NutsackOfSteel;
+            WinCanvas.SetActive(true);
+        }
         //state changing and AI
+        else
         switch (m_State)
         {
             //patrol 3-8 seconds(immortal)

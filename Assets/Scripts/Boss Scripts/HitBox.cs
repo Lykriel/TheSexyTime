@@ -3,7 +3,7 @@ using System.Collections;
 
 public class HitBox : MonoBehaviour
 {
-   
+    public GameObject WinCanvas;
     protected enum MORTALITY_STATE
     {
         SpankMeDaddy,
@@ -35,16 +35,15 @@ public class HitBox : MonoBehaviour
 
     public void TakeDamage(int damage)
     {
-        m_Health -= damage;
-        
+        if (m_Mortality == MORTALITY_STATE.SpankMeDaddy)
+        {
+            m_Health -= damage;
+        }
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (m_Health <= 0)
-        {
-            Destroy(gameObject);
-        }
     }
 }
