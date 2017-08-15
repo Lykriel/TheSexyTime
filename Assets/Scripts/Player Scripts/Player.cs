@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Player : Singleton<Player>
+public class Player : MonoBehaviour
 {
     public GameObject DeathCanvas;
     public int m_Health = 1;
@@ -15,6 +15,7 @@ public class Player : Singleton<Player>
 	// Update is called once per frame
 	void Update ()
     {
+        
         if (m_Health <= 0)
         {
             DeathCanvas.SetActive(true);

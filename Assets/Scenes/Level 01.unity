@@ -377,6 +377,19 @@ Prefab:
 GameObject:
   m_PrefabParentObject: {fileID: 153448, guid: d56f35fb3876fb14ab4847e0ac87c2d9, type: 2}
   m_PrefabInternal: {fileID: 1946501060}
+--- !u!114 &346806987
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 346806986}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9617bd56934ed784eb680bf171c62888, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DeathCanvas: {fileID: 1998205030}
+  m_Health: 1
 --- !u!1001 &373392333
 Prefab:
   m_ObjectHideFlags: 0
@@ -996,7 +1009,8 @@ Prefab:
       propertyPath: m_Health
       value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 11461922, guid: d56f35fb3876fb14ab4847e0ac87c2d9, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: d56f35fb3876fb14ab4847e0ac87c2d9, type: 2}
   m_IsPrefabParent: 0
 --- !u!1 &1998205030 stripped

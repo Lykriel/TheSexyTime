@@ -54,6 +54,10 @@ public class TheSecondGuardian : HitBox
 	// Update is called once per frame
 	void Update ()
     {
+        if(player.transform.position.y > 5 || player.transform.position.y < 0)
+        {
+            player.GetComponent<Player>().GetHit();
+        }
         if (m_Mortality == MORTALITY_STATE.SpankMeDaddy)
         {
             GetComponent<Renderer>().material.color = new Color(0, 0, 1);

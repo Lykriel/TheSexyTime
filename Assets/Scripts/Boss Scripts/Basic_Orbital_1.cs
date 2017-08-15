@@ -3,7 +3,7 @@ using System.Collections;
 
 public class Basic_Orbital_1 : MonoBehaviour
 {
-
+    
     Vector3 ParentObjPos;
     TheFirstGuardian CenterPiece;
     public GameObject thePlayer;
@@ -31,7 +31,7 @@ public class Basic_Orbital_1 : MonoBehaviour
         if(CenterPiece.GetState() == TheFirstGuardian.AI_STATE.s_TripleAttack)
         if (col.gameObject == thePlayer)
         {
-            Player.Instance.GetHit();
+            thePlayer.GetComponent<Player>().GetHit();
             Debug.Log(col.gameObject.name);
         }
     }
