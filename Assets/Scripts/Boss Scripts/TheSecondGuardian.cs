@@ -71,7 +71,7 @@ public class TheSecondGuardian : HitBox
                 Debug.Log("delay");
                 //start Delay timer
                 m_MoveDelayTimer += Time.deltaTime;
-                if(m_MoveDelayTimer >= 0.75f)
+                if(m_MoveDelayTimer >= 1f)
                 {
                     m_MoveDelayTimer = 0f;
                     m_state = AI_STATE.s_Move;
