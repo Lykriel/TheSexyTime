@@ -632,6 +632,10 @@ Prefab:
       propertyPath: m_Health
       value: 100
       objectReference: {fileID: 0}
+    - target: {fileID: 11432670, guid: d56f35fb3876fb14ab4847e0ac87c2d9, type: 2}
+      propertyPath: viewRadius
+      value: 2.5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d56f35fb3876fb14ab4847e0ac87c2d9, type: 2}
   m_IsPrefabParent: 0
