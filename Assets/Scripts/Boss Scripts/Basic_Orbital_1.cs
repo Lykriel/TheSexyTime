@@ -6,7 +6,7 @@ public class Basic_Orbital_1 : MonoBehaviour
 
     Vector3 ParentObjPos;
     TheFirstGuardian CenterPiece;
-    
+    public GameObject thePlayer;
     enum OrbitalState
     {
         s_Protect,
@@ -25,12 +25,31 @@ public class Basic_Orbital_1 : MonoBehaviour
         m_State = OrbitalState.s_Extend;
         m_OrgPos = transform.position;
         m_Timer = 0.0f;
+        thePlayer = GetComponent<GameObject>();
+        
     }
-	
-	// Update is called once per frame
-	void Update ()
+    void OnCollisionEnter(Collision col)
     {
+        //if(CenterPiece.GetState() == TheFirstGuardian.AI_STATE.s_TripleAttack)
+        if (col.gameObject == thePlayer)
+        {
+            Player.Instance.GetHit();
+                Debug.Log("hit");
+        }
+    }
+    // Update is called once per frame
+    void Update ()
+    {
+
         ParentObjPos = transform.parent.position;
+        if (CenterPiece.GetState() == TheFirstGuardian.AI_STATE.s_TripleAttack)
+        {
+            GetComponent<Renderer>().material.color = new Color(1, 0, 0);
+        }
+        else
+        {
+            GetComponent<Renderer>().material.color = new Color(1, 1, 1);
+        }
 
         if(m_State == OrbitalState.s_Extend)
         {

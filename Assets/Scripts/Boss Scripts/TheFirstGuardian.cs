@@ -4,7 +4,7 @@ using System.Collections;
 public class TheFirstGuardian : HitBox
 {
 
-    protected enum AI_STATE
+    public enum AI_STATE
     {
 
         s_Aiming,
@@ -40,6 +40,10 @@ public class TheFirstGuardian : HitBox
         m_SpinFactor = 75;
         m_AttackCount = 0;
 
+    }
+    public AI_STATE GetState()
+    {
+        return m_State;
     }
 
 
@@ -81,7 +85,7 @@ public class TheFirstGuardian : HitBox
                 }
                 if (!m_IsAim)
                 {
-                    m_TargetLocation = new Vector3(Random.Range(-15, 15), 0, Random.Range(-15, 15));
+                    m_TargetLocation = new Vector3(Random.Range(1, 74), 0, Random.Range(1, 74));
                     m_IsAim = true;
                 }
                 if (m_IsAim)

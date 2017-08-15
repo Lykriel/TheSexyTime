@@ -20,4 +20,10 @@ public class Player : Singleton<Player>
             DeathCanvas.SetActive(true);
         }
 	}
+
+    public void GetHit()
+    {
+        m_Health -= 1;
+    }
+
 }

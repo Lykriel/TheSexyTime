@@ -3,7 +3,7 @@ using System.Collections;
 
 public class TheSecondGuardian : HitBox
 {
-    enum AI_STATE
+    public enum AI_STATE
     {
         s_Delay,
         s_Move,
@@ -39,6 +39,8 @@ public class TheSecondGuardian : HitBox
         m_WallNum = 6;
         
 	}
+
+    
 	
     public void WallBreak()
     {
@@ -119,13 +121,13 @@ public class TheSecondGuardian : HitBox
                 break;
 
             case AI_STATE.s_Move:
-                if(transform.position.z > 22 || transform.position.z < -25 || transform.position.x <-27|| transform.position.x > 20 )
-                {
-                    m_rotationAmount = 90f;
-                    transform.eulerAngles = (new Vector3(0, 0, 0));
-                    m_state = AI_STATE.s_Delay;
-                    transform.Translate(0, 2, 0, Space.World);
-                }
+                //if(transform.position.z > 22 || transform.position.z < -25 || transform.position.x <-27|| transform.position.x > 20 )
+                //{
+                //    m_rotationAmount = 90f;
+                //    transform.eulerAngles = (new Vector3(0, 0, 0));
+                //    m_state = AI_STATE.s_Delay;
+                //    transform.Translate(0, 2, 0, Space.World);
+                //}
                 Debug.Log("MOVE");
                 Debug.Log(m_Direction);
                 float rotation = m_rotateSpeed * Time.deltaTime;

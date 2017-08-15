@@ -783,6 +783,42 @@ Prefab:
       propertyPath: player
       value: 
       objectReference: {fileID: 346806986}
+    - target: {fileID: 11477022, guid: 737b76ffa51563e47baec9853bea565d, type: 2}
+      propertyPath: thePlayer
+      value: 
+      objectReference: {fileID: 346806986}
+    - target: {fileID: 11498384, guid: 737b76ffa51563e47baec9853bea565d, type: 2}
+      propertyPath: thePlayer
+      value: 
+      objectReference: {fileID: 346806986}
+    - target: {fileID: 11477826, guid: 737b76ffa51563e47baec9853bea565d, type: 2}
+      propertyPath: thePlayer
+      value: 
+      objectReference: {fileID: 346806986}
+    - target: {fileID: 11431946, guid: 737b76ffa51563e47baec9853bea565d, type: 2}
+      propertyPath: thePlayer
+      value: 
+      objectReference: {fileID: 346806986}
+    - target: {fileID: 11481724, guid: 737b76ffa51563e47baec9853bea565d, type: 2}
+      propertyPath: thePlayer
+      value: 
+      objectReference: {fileID: 346806986}
+    - target: {fileID: 11470980, guid: 737b76ffa51563e47baec9853bea565d, type: 2}
+      propertyPath: thePlayer
+      value: 
+      objectReference: {fileID: 346806986}
+    - target: {fileID: 11442436, guid: 737b76ffa51563e47baec9853bea565d, type: 2}
+      propertyPath: thePlayer
+      value: 
+      objectReference: {fileID: 346806986}
+    - target: {fileID: 11472898, guid: 737b76ffa51563e47baec9853bea565d, type: 2}
+      propertyPath: thePlayer
+      value: 
+      objectReference: {fileID: 346806986}
+    - target: {fileID: 456228, guid: 737b76ffa51563e47baec9853bea565d, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: -2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 737b76ffa51563e47baec9853bea565d, type: 2}
   m_IsPrefabParent: 0
